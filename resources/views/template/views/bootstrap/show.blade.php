@@ -1,0 +1,38 @@
+@@extends('scaffold-interface.layouts.app')
+@@section('title','Affichage')
+@@section('content')
+<section class="content">
+    <h1>Affichage {{$parser->singular()}}</h1>
+    <br>
+       <a href='@{!!url("{{$parser->singular()}}")!!}' class = 'btn btn-primary'><i class="fa fa-home"></i>Liste des {{$parser->upperCaseFirst()}}</a>
+    <br>
+    <table class = 'table table-bordered'>
+        <thead>
+            <th>Clé</th>
+            <th>Valeur</th>
+        </thead>
+        <tbody>
+            @foreach($dataSystem->dataScaffold('v') as $value)
+            <tr>
+                <td>
+                    <b>{{$value}}</b>
+                </td>
+                <td>@{!!${{$parser->singular()}}->{{$value}}!!}</td>
+            </tr>
+            @endforeach
+            @if($dataSystem->getRelationAttributes() != null)
+            @foreach($dataSystem->getRelationAttributes() as $key=>$value)
+            @foreach($value as $key1 => $value1)
+            <tr>
+                <td>
+                    <b><i>{{$value1}} : </i></b>
+                </td>
+                <td>@{!!${{$parser->singular()}}->{{str_singular($key)}}->{{$value1}}!!}</td>
+            </tr>
+            @endforeach
+            @endforeach
+            @endif
+        </tbody>
+    </table>
+</section>
+@@endsection
