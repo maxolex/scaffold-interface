@@ -70,7 +70,7 @@ class GuiController extends AppController
             }
         }
 
-        Session::flash('status', $names->singular().'Créé avec succès ');
+        Session::flash('status', $names->singular().' Créé avec succès ');
 
         return redirect('scaffold');
     }

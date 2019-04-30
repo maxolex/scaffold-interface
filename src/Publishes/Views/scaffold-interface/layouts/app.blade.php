@@ -224,5 +224,6 @@
             $("form").attr("autocomplete", "off"); // Comment if you want auto-complete
         });
 		</script>
+		@include('flashy::message')
 	</body>
 </html>
