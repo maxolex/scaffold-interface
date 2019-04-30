@@ -42,7 +42,6 @@
 					<span class="logo-mini"><b>S</b>IN</span>
 					<!-- logo for regular state and mobile devices -->
 					<span class="logo-lg">
-                        <img style="float: left" width="50px" src="{{ asset("images/logo.png") }}" alt="">
                         <b>ScaffoldInterface</b>
                     </span>
 				</a>

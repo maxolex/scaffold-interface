@@ -11,6 +11,10 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class {{ucfirst($parser->singular())}} extends Model
 {
+	const RULES = [
+
+	];
+	
 	@if($dataSystem->isSoftdeletes())
 
 	use SoftDeletes;

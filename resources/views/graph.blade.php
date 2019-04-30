@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Graph</title>
+	<title>Graphique</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.18.0/vis.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.18.0/vis.min.js"></script>
@@ -52,7 +52,7 @@
 <body onload="draw()">
 	<div class="container">
 		<div align="center">
-			<h1>Models graph
+			<h1>Modèle graphique
 			<div>
 				<a href="{{url('scaffold')}}" class="btn btn-primary">Retour sur l'interface</a>
 				<a href="{{url('scaffold-dashboard')}}" class="btn btn-danger">Tableau de bord</a></h1>

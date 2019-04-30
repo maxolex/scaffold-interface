@@ -13,7 +13,7 @@
         <div id = "el1" class = 'container'>
             <h2 class = "thin">A Smart CRUD Generator For <i>Laravel</i> (FRENCH)</h2>
             <div style = 'margin-top: 2cm;'></div>
-            <button v-if = '!show' transition = "fade" class = 'btn animated' @click = 'show = ! show'><i class = 'material-icons left'>create</i>New Table</button>
+            <button v-if = '!show' transition = "fade" class = 'btn animated' @click = 'show = ! show'><i class = 'material-icons left'>create</i>Nouvelle Table</button>
             <a href = '#modal1' transition = "fade" class = 'create btn red modal-trigger' data-link = "/scaffold/manyToManyForm"><i class = 'material-icons left'>device_hub</i>Many To Many</a>
             <a href="{{url('/scaffold/graph')}}" class="btn orange"><i class="material-icons left">share</i>Graph</a>
             <br>
@@ -102,8 +102,8 @@
                         </table>
                         <div transition = 'fade' class = "row animated" v-if = 'submit'>
                             <button type = 'submit' class = 'val btn green col s12 animated'>
-                            <i class = 'material-icons left'>Valider</i>
-                            Done
+                            <i class = 'material-icons left'>done</i>
+                            Valider
                             </button>
                         </div>
                     </form>
