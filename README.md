@@ -73,6 +73,10 @@ class User extends Authenticatable
  ```
  
 Congratulations, you have successfully installed Scaffold Interface!
+
+Let's begin.
+
+  Go to http://{your-project-url}/scaffold
  
 ### Detailed Documentation
 
