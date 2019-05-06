@@ -45,6 +45,27 @@ Pusher\Laravel\PusherServiceProvider::class,
 3. Publish the assets in your application with:
 
  `php artisan vendor:publish`
+ 
+
+    What does this command publishes:
+
+    app/Http/Controllers/UserController.php
+
+    app/Http/Controllers/RoleController.php
+
+    app/Http/Controllers/PermissionController.php
+
+    resources/views/scaffold-interface (dashboard,users,roles,permissions blade)
+
+    resources/views/scaffold-interface/layouts (you can edit your layouts before making crud)
+
+    public/js/scaffold-interface-js
+
+    public/css/scaffold-interface-css
+
+    config/amranidev/config.php
+
+    database/migrations/migration_file
 
 4. Run migrations:
 
