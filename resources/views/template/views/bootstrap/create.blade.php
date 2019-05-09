@@ -9,7 +9,7 @@
         <input type = 'hidden' name = '_token' value = '@{{Session::token()}}'>
         <?php $i = 0;?>
         @foreach($dataSystem->dataScaffold('v') as $value)
-            @if($dataSystem->dataScaffold('migration')[$i]}} == "date")
+            @if($dataSystem->dataScaffold('migration')[$i] == "date")
             <div class="form-group">
                 <label for="{{$value}}">{{$value}}</label>
                 <input id="{{$value}}" name = "{{$value}}" type="date" class="form-control">
