@@ -14,6 +14,10 @@ class {{ucfirst($parser->singular())}} extends Model
 	const RULES = [
 
 	];
+
+	const RULES_UPDATE = [
+
+	];
 	
 	@if($dataSystem->isSoftdeletes())
 
