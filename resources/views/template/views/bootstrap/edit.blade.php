@@ -19,6 +19,7 @@
             <label for="{{$value}}">{{$value}}</label>
             <input id="{{$value}}" name = "{{$value}}" type="text" class="form-control" value="@{!!${{$parser->singular()}}->{{$value}}!!}">
         </div>
+        <?php $i = $i + 1;?>
         @endforeach
         @foreach($dataSystem->getForeignKeys() as $key)
         <div class="form-group">
