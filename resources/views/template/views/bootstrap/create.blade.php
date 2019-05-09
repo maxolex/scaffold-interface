@@ -14,11 +14,12 @@
                 <label for="{{$value}}">{{$value}}</label>
                 <input id="{{$value}}" name = "{{$value}}" type="date" class="form-control">
             </div>
+            @else
+            <div class="form-group">
+                <label for="{{$value}}">{{$value}}</label>
+                <input id="{{$value}}" name = "{{$value}}" type="text" class="form-control">
+            </div>
             @endif
-        <div class="form-group">
-            <label for="{{$value}}">{{$value}}</label>
-            <input id="{{$value}}" name = "{{$value}}" type="text" class="form-control">
-        </div>
         <?php $i = $i + 1;?>
         @endforeach
         @foreach($dataSystem->getForeignKeys() as $key)
