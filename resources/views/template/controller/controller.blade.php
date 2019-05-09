@@ -64,7 +64,7 @@ class {{ucfirst($parser->singular())}}Controller extends Controller
         );
 
         if ($validator->fails()) {
-            return redirect(route('@if(config('maxolex.config.prefixRoutes')){{config('maxolex.config.prefixRoutes')}}/@endif{{$parser->singular()}}'.'.index'))
+            return redirect(route('@if(config('maxolex.config.prefixRoutes')){{config('maxolex.config.prefixRoutes')}}/@endif{{$parser->singular()}}.index'))
                 ->withErrors($validator)
                 ->withInput();
         }
@@ -85,7 +85,7 @@ class {{ucfirst($parser->singular())}}Controller extends Controller
 
         ${{$parser->singular()}}->save();
 
-        Flashy::success('Un element a été ajouté avec succès', '');
+        Flashy::success('Un element a été ajouté avec succès', route('@if(config('maxolex.config.prefixRoutes')){{config('maxolex.config.prefixRoutes')}}/@endif{{$parser->singular()}}.index'));
 
         $pusher = App::make('pusher');
 
@@ -159,7 +159,7 @@ class {{ucfirst($parser->singular())}}Controller extends Controller
         );
 
         if ($validator->fails()) {
-            return redirect(route('@if(config('maxolex.config.prefixRoutes')){{config('maxolex.config.prefixRoutes')}}/@endif{{$parser->singular()}}'.'.edit'),$id)
+            return redirect(route('@if(config('maxolex.config.prefixRoutes')){{config('maxolex.config.prefixRoutes')}}/@endif{{$parser->singular()}}.edit',$id))
                 ->withErrors($validator)
                 ->withInput();
         }
@@ -178,7 +178,7 @@ class {{ucfirst($parser->singular())}}Controller extends Controller
 
         ${{$parser->singular()}}->save();
 
-        Flashy::success('Un element a été modifié avec succès', route('@if(config('maxolex.config.prefixRoutes')){{config('maxolex.config.prefixRoutes')}}/@endif{{$parser->singular()}}'.'.index'));
+        Flashy::success('Un element a été modifié avec succès', route('@if(config('maxolex.config.prefixRoutes')){{config('maxolex.config.prefixRoutes')}}/@endif{{$parser->singular()}}.index'));
 
         return redirect('@if(config('maxolex.config.prefixRoutes')){{config('maxolex.config.prefixRoutes')}}/@endif{{$parser->singular()}}');
     }
@@ -210,7 +210,7 @@ class {{ucfirst($parser->singular())}}Controller extends Controller
     {
      	${{$parser->singular()}} = {{ucfirst($parser->singular())}}::findOrfail($id);
      	${{$parser->singular()}}->delete();
-        Flashy::success('Un element a été supprimé avec succès', '');
+        Flashy::success('Un element a été supprimé avec succès', route('@if(config('maxolex.config.prefixRoutes')){{config('maxolex.config.prefixRoutes')}}/@endif{{$parser->singular()}}.index'));
         return URL::to('@if(config('maxolex.config.prefixRoutes')){{config('maxolex.config.prefixRoutes')}}/@endif{{$parser->singular()}}');
     }
 }
