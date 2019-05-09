@@ -7,7 +7,14 @@
     <br>
     <form method = 'POST' action = '@{!! url("{{$parser->singular()}}")!!}/@{!!${{$parser->singular()}}->id!!}/update'>
         <input type = 'hidden' name = '_token' value = '@{{Session::token()}}'>
+        <?php $i = 0;?>
         @foreach($dataSystem->dataScaffold('v') as $value)
+            @if($dataSystem->dataScaffold('migration')[$i]}} == "date")
+                <div class="form-group">
+                    <label for="{{$value}}">{{$value}}</label>
+                    <input id="{{$value}}" name = "{{$value}}" type="date" class="form-control" value="@{!!${{$parser->singular()}}->{{$value}}!!}">
+                </div>
+            @endif
         <div class="form-group">
             <label for="{{$value}}">{{$value}}</label>
             <input id="{{$value}}" name = "{{$value}}" type="text" class="form-control" value="@{!!${{$parser->singular()}}->{{$value}}!!}">
