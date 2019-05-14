@@ -1,8 +1,8 @@
 @@extends('scaffold-interface.layouts.app')
-@@section('title','Liste')
+@@section('title','Liste des {{ucfirst($parser->plural())}}')
 @@section('content')
 <section class="content">
-    <h1>Liste des {{ucfirst($parser->singular())}}</h1>
+    <h1>Liste des {{ucfirst($parser->plural())}}</h1>
     <a href='@{!!url("{{$parser->singular()}}")!!}/create' class = 'btn btn-success'><i class="fa fa-plus"></i> Ajouter</a>
     <br>
     @if($dataSystem->getRelationAttributes() != null)

@@ -1,10 +1,10 @@
 @@extends('scaffold-interface.layouts.defaultMaterialize')
-@@section('title','Affichage')
+@@section('title','Affichage {{$parser->singular()}}')
 @@section('content')
 <div class = 'container'>
     <h1>Affichage {{$parser->singular()}}</h1>
     <form method = 'get' action = '@{!!url("{{$parser->singular()}}")!!}'>
-        <button class = 'btn blue'>Liste des {{$parser->singular()}}</button>
+        <button class = 'btn blue'>Liste des {{$parser->plural()}}</button>
     </form>
     <table class = 'highlight bordered'>
         <thead>

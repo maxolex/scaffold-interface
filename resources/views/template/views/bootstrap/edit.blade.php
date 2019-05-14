@@ -1,9 +1,9 @@
 @@extends('scaffold-interface.layouts.app')
-@@section('title','Edition')
+@@section('title','Edition {{$parser->singular()}}')
 @@section('content')
 <section class="content">
     <h1>Editer {{$parser->singular()}}</h1>
-    <a href="@{!!url('{{$parser->singular()}}')!!}" class = 'btn btn-primary'><i class="fa fa-home"></i> Liste des {{$parser->upperCaseFirst()}}</a>
+    <a href="@{!!url('{{$parser->singular()}}')!!}" class = 'btn btn-primary'><i class="fa fa-home"></i> Liste des {{$parser->plural()}}</a>
     <br>
     <form method = 'POST' action = '@{!! url("{{$parser->singular()}}")!!}/@{!!${{$parser->singular()}}->id!!}/update'>
         <input type = 'hidden' name = '_token' value = '@{{Session::token()}}'>
@@ -14,6 +14,17 @@
                     <label for="{{$value}}">{{$value}}</label>
                     <input id="{{$value}}" name = "{{$value}}" type="date" class="form-control" value="@{!!${{$parser->singular()}}->{{$value}}!!}">
                 </div>
+            @elseif($dataSystem->dataScaffold('migration')[$i] == "longText")
+            <div class="form-group">
+                <label for="{{$value}}">{{$value}}</label>
+                <textarea id="{{$value}}" name = "{{$value}}" type="text" class="form-control">@{!!${{$parser->singular()}}->{{$value}}!!}
+                </textarea>
+            </div>
+            @elseif($dataSystem->dataScaffold('migration')[$i] == "integer")
+            <div class="form-group">
+                <label for="{{$value}}">{{$value}}</label>
+                <input id="{{$value}}" name = "{{$value}}" type="number" step="1" class="form-control" value="@{!!${{$parser->singular()}}->{{$value}}!!}">
+            </div>
             @else
                 <div class="form-group">
                     <label for="{{$value}}">{{$value}}</label>

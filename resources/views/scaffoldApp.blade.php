@@ -11,16 +11,16 @@
     </head>
     <body>
         <div id = "el1" class = 'container'>
-            <h2 class = "thin">A Smart CRUD Generator For <i>Laravel</i> (FRENCH)</h2>
+            <h3 class = "thin">A Smart CRUD Generator For <i>Laravel</i> (FRENCH)</h3>
             <div style = 'margin-top: 2cm;'></div>
-            <button v-if = '!show' transition = "fade" class = 'btn animated' @click = 'show = ! show'><i class = 'material-icons left'>create</i>Nouvelle Table</button>
+            <button v-if = '!show' transition = "fade" class = 'btn animated' @click = 'show = ! show'><i class = 'material-icons left'>add</i>Nouvelle Table</button>
             <a href = '#modal1' transition = "fade" class = 'create btn red modal-trigger' data-link = "/scaffold/manyToManyForm"><i class = 'material-icons left'>device_hub</i>Many To Many</a>
             <a href="{{url('/scaffold/graph')}}" class="btn orange"><i class="material-icons left">share</i>Graph</a>
             <br>
             <div class="row">
                 <div transition = "fade" class="col s5 animated" v-if = 'show'>
                     <p transition = "fade" class = 'animated red-text flow-text' v-if = 'error'>@{{errorMsg}}</p>
-                    <form id = 'form' method = 'post' action = '{{URL::to("/scaffold/guipost")}}'>
+                    <form id = 'form' method = 'post' action = '{{URL::to("/scaffold/guipost")}}' autocomplete="off">
                         {{csrf_field()}}
                         <table class = 'ta'>
                             <tr>
@@ -33,12 +33,12 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <input name="template" type="radio" value = "materialize" checked id="materialize" />
-                                    <label for="materialize">Materialize</label>
+                                    <input name="template" type="radio" value = "bootstrap" checked id="bootstrap" />
+                                    <label for="bootstrap">Bootstrap</label>
                                 </td>
                                 <td>
-                                    <input name="template" type="radio" value = "bootstrap" id="bootstrap" />
-                                    <label for="bootstrap">Bootstrap</label>
+                                    <input name="template" type="radio" value = "materialize" id="materialize" />
+                                    <label for="materialize">Materialize</label>
                                 </td>
                             </tr>
                             <tr>
@@ -147,7 +147,7 @@
                                     <td>{{$value->package}}</td>
                                     <td>{{$value->created_at}}</td>
                                     <td><span class = "scaffoldv {{$toto = Schema::hasTable($value->tablename) ? 'green' : 'red'}} white-text">{{$toto = Schema::hasTable($value->tablename) ? 'Migrated' : 'Not migrated'}}</span></td>
-                                    <td><a href="{{URL::to('/')}}/{{lcfirst(str_singular($value->tablename))}}" class = 'btn-floating blue white-text'><i class = 'material-icons'>send</i></a></td>
+                                    <td><a target="_blank" href="{{URL::to('/')}}/{{lcfirst(str_singular($value->tablename))}}" class = 'btn-floating blue white-text'><i class = 'material-icons'>send</i></a></td>
                                     <td><a href = '#modal1' class = 'delete btn-floating pink modal-trigger' data-link = '/scaffold/guidelete/{{$value->id}}'><i class = 'material-icons'>repeat</i></a></td>
                                 </tr>
                                 @endforeach

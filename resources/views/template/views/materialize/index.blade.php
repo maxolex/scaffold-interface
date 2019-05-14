@@ -1,8 +1,8 @@
 @@extends('scaffold-interface.layouts.defaultMaterialize')
-@@section('title','Liste')
+@@section('title','Liste des {{ucfirst($parser->plural())}}')
 @@section('content')
 <div class = 'container'>
-    <h1>Liste des {{$parser->singular()}}</h1>
+    <h1>Liste des {{$parser->plural()}}</h1>
     <div class="row">
         <form class = 'col s3' method = 'get' action = '@{!!url("{{$parser->singular()}}")!!}/create'>
             <button class = 'btn red' type = 'submit'>Ajouter {{$parser->singular()}}</button>

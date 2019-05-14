@@ -1,10 +1,10 @@
 @@extends('scaffold-interface.layouts.app')
-@@section('title','Affichage')
+@@section('title','Affichage {{$parser->singular()}}')
 @@section('content')
 <section class="content">
     <h1>Affichage {{$parser->singular()}}</h1>
     <br>
-       <a href='@{!!url("{{$parser->singular()}}")!!}' class = 'btn btn-primary'><i class="fa fa-home"></i>Liste des {{$parser->upperCaseFirst()}}</a>
+       <a href='@{!!url("{{$parser->singular()}}")!!}' class = 'btn btn-primary'><i class="fa fa-home"></i>Liste des {{$parser->plural()}}</a>
     <br>
     <table class = 'table table-bordered'>
         <thead>
