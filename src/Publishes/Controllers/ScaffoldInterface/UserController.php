@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\ScaffoldInterface;
 
+use App\User;
 use Hash;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
@@ -130,10 +131,20 @@ class UserController extends Controller
      */
     public function addPermission(Request $request)
     {
-        $user = \App\User::findorfail($request->user_id);
-        $user->givePermissionTo($request->permission_name);
+        if ($request->role_id == null)
+        {
+            $user = \App\User::findorfail($request->user_id);
+            $user->givePermissionTo($request->permission_name);
 
-        return redirect('scaffold-users/edit/'.$request->user_id);
+            return redirect('scaffold-users/edit/'.$request->user_id);
+        }else{
+
+            $role = Role::findById($request->role_id);
+            $role->givePermissionTo($request->permission_name);
+
+            return redirect('scaffold-roles/edit/'.$request->role_id);
+        }
+
     }
 
     /**
@@ -143,13 +154,22 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function revokePermission($permission, $user_id)
+    public function revokePermission(Request $request, $permission, $user_id)
     {
-        $user = \App\User::findorfail($user_id);
+        if ($request->role_id == null)
+        {
+            $user = \App\User::findorfail($user_id);
 
-        $user->revokePermissionTo(str_slug($permission, ' '));
+            $user->revokePermissionTo(str_slug($permission, ' '));
 
-        return redirect('scaffold-users/edit/'.$user_id);
+            return redirect('scaffold-users/edit/'.$user_id);
+        }else{
+            $role = Role::findById($request->role_id);
+            $role->revokePermissionTo(str_slug($permission,''));
+            return redirect('scaffold-roles/edit/'.$role->id);
+
+        }
+
     }
 
     /**

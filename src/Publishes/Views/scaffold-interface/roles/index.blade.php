@@ -10,12 +10,22 @@
 			<table class="table table-striped">
 				<head>
 					<th>Role</th>
+                    <th>Permissions</th>
 					<th>Actions</th>
 				</head>
 				<tbody>
 					@foreach($roles as $role)
 					<tr>
 						<td>{{$role->name}}</td>
+                        <td>
+                            @if(!empty($role->permissions))
+                                @foreach($role->permissions as $permission)
+                                    <small class = 'label bg-orange'>{{$permission->name}}</small>
+                                @endforeach
+                            @else
+                                <small class = 'label bg-red'>Pas de Permissions</small>
+                            @endif
+                        </td>
 						<td>
 							<a href="{{url('/scaffold-roles/edit')}}/{{$role->id}}" class = "btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
 							<a href="{{url('/scaffold-roles/delete')}}/{{$role->id}}" class = "btn btn-danger btn-sm"><i class="fa fa-trash-o" aria-hidden="true"></i></a>

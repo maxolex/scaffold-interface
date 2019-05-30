@@ -30,7 +30,7 @@ class {{ucfirst($parser->singular())}}Controller extends Controller
     public function index()
     {
         $title = 'Liste - {{$parser->singular()}}';
-        ${{$parser->plural()}} = {{ucfirst($parser->singular())}}::paginate(6);
+        ${{$parser->plural()}} = {{ucfirst($parser->singular())}}::all();
         return view('@if(config('maxolex.config.loadViews')){{config('maxolex.config.loadViews')}}::@endif<?php if( config('maxolex.config.prefixViews') ){ echo config('maxolex.config.prefixViews').'.';}?>{{$parser->singular()}}.index',compact('{{$parser->plural()}}','title'));
     }
 

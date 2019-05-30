@@ -30,8 +30,8 @@
 				@endif
 				</td>
 				<td>
-				@if(!empty($user->permissions))
-					@foreach($user->permissions as $permission)
+				@if(!empty($user->getAllPermissions()))
+					@foreach($user->getAllPermissions() as $permission)
 					<small class = 'label bg-orange'>{{$permission->name}}</small>
 					@endforeach
 				@else

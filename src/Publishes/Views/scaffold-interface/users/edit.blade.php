@@ -29,16 +29,16 @@
 		<div class="col-md-6">
 			<div class="box box-primary">
 				<div class="box-header">
-					<h3>{{$user->name}} Roles</h3>
+					<h3>Roles de {{$user->name}}</h3>
 				</div>
 				<div class="box-body">
 					<form action="{{url('scaffold-users/addRole')}}" method = "post">
 						{!! csrf_field() !!}
 						<input type="hidden" name = "user_id" value = "{{$user->id}}">
 						<div class="form-group">
-							<select name="role_name" id="" class = "form-control">
+							<select name="role_name[]" id="roles" class = "form-control" multiple>
 								@foreach($roles as $role)
-								<option value="{{$role}}">{{$role}}</option>
+								<option {{ $user->hasRole($role) ? "selected" : "" }} value="{{$role}}">{{$role}}</option>
 								@endforeach
 							</select>
 						</div>
@@ -66,16 +66,16 @@
 		<div class="col-md-6">
 			<div class="box box-primary">
 				<div class="box-header">
-					<h3>{{$user->name}} Permissions</h3>
+					<h3>Permissions de {{$user->name}}</h3>
 				</div>
 				<div class="box-body">
 					<form action="{{url('scaffold-users/addPermission')}}" method = "post">
 						{!! csrf_field() !!}
 						<input type="hidden" name = "user_id" value = "{{$user->id}}">
 						<div class="form-group">
-							<select name="permission_name" id="" class = "form-control">
+							<select name="permission_name[]" id="permissions" class = "form-control" multiple="multiple">
 								@foreach($permissions as $permission)
-								<option value="{{$permission}}">{{$permission}}</option>
+								<option {{ $user->hasDirectPermission($permission)? "selected": "" }} value="{{$permission}}">{{$permission}}</option>
 								@endforeach
 							</select>
 						</div>

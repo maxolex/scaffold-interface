@@ -122,12 +122,13 @@
 								<i class="fa fa-dashboard"></i> <span>Tableau de bord</span></i>
 							</a>
 						</li>
+						@if(Auth::user()->hasRole('Admin'))
 						<li class="header">ADMINISTRATEUR</li>
 						<li class="treeview"><a href="{{url('/scaffold-users')}}"><i class="fa fa-users"></i> <span>Utilisateurs</span></a></li>
 						<li class="treeview"><a href="{{url('/scaffold-roles')}}"><i class="fa fa-user-plus"></i> <span>Role</span></a></li>
 						<li class="treeview"><a href="{{url('/scaffold-permissions')}}"><i class="fa fa-key"></i> <span>Permissions</span></a></li>
-						<li class="header">fonctionnalités</li>
-						<li class="treeview"><a href="{{url('/scaffold')}}"><i class="fa fa-desktop"></i> <span>Scaffold Interface</span></a></li>
+						@endif
+						@include("scaffold-interface.layouts.partials._nav")
 					
 					</ul>
 				</section>
@@ -220,9 +221,28 @@
 			});
 		} );
         $(document).ready(function() {
-            $('.form-group>select').select2();
-            $("form").attr("autocomplete", "off"); // Comment if you want auto-complete
+            $('.form-group>select').not('#select2').select2();
+	        $('.form-group>select>#permissions').select2({multiple:true});
+	        $('.form-group>select>#roles').select2({multiple:true});
         });
+        $("#select1").change(function() {
+	        if ($(this).data('options') === undefined) {
+	            /*Taking an array of all options-2 and kind of embedding it on the select1*/
+	            $(this).data('options', $('#select2 option').clone());
+	        }
+	        var id = $(this).val();
+	        var options = $(this).data('options').filter('[data-id=' + id + ']');
+	        $('#select2').html(options);
+	    });
+		</script>
+		<script>
+		    $(document).ready(function(){
+		        $('a.removal').click(function() {
+		            event.preventDefault();
+		            document.getElementById("remove-form").action =  $(this).attr('href');
+		            document.getElementById("remove-form").submit();
+		        });
+		    });
 		</script>
 		@include('flashy::message')
 	</body>

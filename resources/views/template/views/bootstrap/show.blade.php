@@ -2,8 +2,12 @@
 @@section('title','Affichage {{$parser->singular()}}')
 @@section('content')
 <section class="content">
-    <h1>Affichage {{$parser->singular()}}</h1>
-    <br>
+    <div class="box box-primary">
+        <div class="box-header">
+            <h1>Details {{$parser->singular()}}</h1>
+        </div>
+        <div class="box-body">
+            <br>
        <a href='@{!!url("{{$parser->singular()}}")!!}' class = 'btn btn-primary'><i class="fa fa-home"></i>Liste des {{$parser->plural()}}</a>
     <br>
     <table class = 'table table-bordered'>
@@ -34,5 +38,7 @@
             @endif
         </tbody>
     </table>
+        </div>
+    </div>
 </section>
 @@endsection

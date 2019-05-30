@@ -55,6 +55,5 @@
             @@endforeach
         </tbody>
     </table>
-    @{!! ${{$parser->plural()}}->render() !!}
 </section>
 @@endsection

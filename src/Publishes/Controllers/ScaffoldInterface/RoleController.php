@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\ScaffoldInterface;
 
 use Illuminate\Http\Request;
+use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 use App\Http\Controllers\Controller;
 
@@ -55,7 +56,11 @@ class RoleController extends Controller
     {
         $role = Role::findOrFail($id);
 
-        return view('scaffold-interface.roles.edit', compact('role'));
+        $permissions = Permission::all()->pluck('name');
+
+        $rolePermissions = $role->permissions;
+
+        return view('scaffold-interface.roles.edit', compact('role','permissions','rolePermissions'));
     }
 
     /**
