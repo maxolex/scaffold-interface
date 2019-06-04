@@ -234,6 +234,7 @@
 	        var options = $(this).data('options').filter('[data-id=' + id + ']');
 	        $('#select2').html(options);
 	    });
+	    $('#select1 option:first-child').attr("selected", "selected").change();
 		</script>
 		<script>
 		    $(document).ready(function(){

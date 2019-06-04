@@ -37,7 +37,7 @@
                 <?php $i = $i + 1;?>
                 @endforeach
                 @foreach($dataSystem->getForeignKeys() as $key)
-                <div class="form-group">
+                <div class="col-md-6 form-group">
                     <label>{{$key}}</label>
                     <select name = '{{lcfirst(str_singular($key))}}_id' class = 'form-control'>
                         @@foreach(${{str_plural($key)}} as $key => $value)
