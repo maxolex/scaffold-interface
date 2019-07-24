@@ -47,7 +47,9 @@
                     </select>
                 </div>
                 @endforeach
+                <div class="col-md-12">
                 <button class = 'btn btn-success' type ='submit'><i class="fa fa-floppy-o"></i> Mettre à jour</button>
+                </div>
             </form>
         </div>
     </div>
