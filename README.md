@@ -44,7 +44,7 @@ Pusher\Laravel\PusherServiceProvider::class,
 
 3. Publish the assets in your application with:
 
- `php artisan vendor:publish`
+ `php artisan vendor:publish --provider="Maxolex\ScaffoldInterface\ScaffoldInterfaceServiceProvider"`
  
 
     What does this command publishes:
@@ -63,7 +63,7 @@ Pusher\Laravel\PusherServiceProvider::class,
 
     public/css/scaffold-interface-css
 
-    config/amranidev/config.php
+    config/maxolex/config.php
 
     database/migrations/migration_file
 
