@@ -45,6 +45,7 @@ Pusher\Laravel\PusherServiceProvider::class,
 3. Publish the assets in your application with:
 
  `php artisan vendor:publish --provider="Maxolex\ScaffoldInterface\ScaffoldInterfaceServiceProvider"`
+ `php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider" --tag="migrations"`
  
 
     What does this command publishes:
