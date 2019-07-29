@@ -48,6 +48,8 @@ Pusher\Laravel\PusherServiceProvider::class,
  
  `php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider" --tag="migrations"`
  
+ `php artisan vendor:publish --provider="Amranidev\Ajaxis\AjaxisServiceProvider"`
+ 
 
     What does this command publishes:
 
