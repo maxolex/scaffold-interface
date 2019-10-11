@@ -6,7 +6,7 @@
     <a href='@{!!url("{{$parser->singular()}}")!!}/create' class = 'btn btn-success'><i class="fa fa-plus"></i> Ajouter</a>
     <br>
     @if($dataSystem->getRelationAttributes() != null)
-    <div class="dropdown">
+    {{-- <div class="dropdown">
         <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
         Associé
         <span class="caret"></span>
@@ -16,7 +16,7 @@
             <li><a href="{{URL::to('/')}}/{{lcfirst(str_singular($key))}}">{{ucfirst(str_singular($key))}}</a></li>
             @endforeach
         </ul>
-    </div>
+    </div> --}}
     @endif
     <br>
     <table class = "table table-striped table-bordered table-hover" style = 'background:#fff'>

@@ -22,7 +22,7 @@ class {{studly_case(ucfirst($parser->plural()))}} extends Migration
 
         @foreach($dataSystem->dataScaffold('v') as $attr)
 
-        $table->{{$dataSystem->dataScaffold('migration')[$i]}}('{{$attr}}');<?php $i = $i + 1;?>
+        $table->{{$dataSystem->dataScaffold('migration')[$i]}}('{{$attr}}')->nullable();<?php $i = $i + 1;?>
 
         @endforeach
 
