@@ -9,7 +9,7 @@ use AppController;
  *
  * NOTE: this class is still in development Stage.
  *
- * @author Houssain Amrani.
+ * @author Maxolex Togolais.
  */
 class ScaffoldInterfaceController extends AppController
 {

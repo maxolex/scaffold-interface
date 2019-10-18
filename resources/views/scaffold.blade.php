@@ -40,7 +40,7 @@
                                             <td>@{{entity.created_at}}</td>
                                             <td><span class = "scaffoldv white-text">TBD</span></td>
                                             <td><a href="" class=""><i class = 'material-icons'>Link</i></a></td>
-                                            <td><a href = "" class="delete btn-floating pink modal-trigger">Rollback</a></td>
+                                            <td><a href = "" class="delete btn-floating pink modal-trigger">delete</a></td>
                                         </tr>
                                     </tbody>
                                 </table>

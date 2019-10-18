@@ -83,4 +83,14 @@ class Parser
 
         throw new \Exception('Template Error');
     }
+
+    public function real()
+    {
+        return str_singular($this->data['TableName']);
+    }
+
+    public function real_plural()
+    {
+        return str_plural($this->data['TableName']);
+    }
 }

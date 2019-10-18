@@ -73,7 +73,7 @@ class {{ucfirst($parser->singular())}}Controller extends Controller
 
         @foreach($dataSystem->dataScaffold('v') as $value)
 
-        ${{$parser->singular()}}->{{$value}} = $request->{{$value}};
+        ${{$parser->singular()}}->{{str_singular(str_slug($value,"_"))}} = $request->{{str_singular(str_slug($value,"_"))}};
 
         @endforeach
 
@@ -167,7 +167,7 @@ class {{ucfirst($parser->singular())}}Controller extends Controller
         ${{$parser->singular()}} = {{ucfirst($parser->singular())}}::findOrfail($id);
     	@foreach($dataSystem->dataScaffold('v') as $value)
 
-        ${{$parser->singular()}}->{{$value}} = $request->{{$value}};
+        ${{$parser->singular()}}->{{str_singular(str_slug($value,"_"))}} = $request->{{str_singular(str_slug($value,"_"))}};
         @endforeach
 
         @foreach($dataSystem->getForeignKeys() as $key)

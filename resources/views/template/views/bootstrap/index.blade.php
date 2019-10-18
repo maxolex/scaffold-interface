@@ -1,8 +1,8 @@
 @@extends('scaffold-interface.layouts.app')
-@@section('title','Liste des {{ucfirst($parser->plural())}}')
+@@section('title','Liste des {{ucfirst($parser->real_plural())}}')
 @@section('content')
 <section class="content">
-    <h1>Liste des {{ucfirst($parser->plural())}}</h1>
+    <h1>Liste des {{ucfirst($parser->real_plural())}}</h1>
     <a href='@{!!url("{{$parser->singular()}}")!!}/create' class = 'btn btn-success'><i class="fa fa-plus"></i> Ajouter</a>
     <br>
     @if($dataSystem->getRelationAttributes() != null)
@@ -21,31 +21,35 @@
     <br>
     <table class = "table table-striped table-bordered table-hover" style = 'background:#fff'>
         <thead>
-            @foreach($dataSystem->dataScaffold('v') as $value)
-            <th>{{$value}}</th>
-            @endforeach
             @if($dataSystem->getRelationAttributes() != null)
             @foreach($dataSystem->getRelationAttributes() as $key => $value)
             @foreach($value as $key1 => $value1)
-            <th>{{$value1}}</th>
+            @if($loop->first)
+            <th>{{str_singular($key)}}</th>
+            @endif
             @endforeach
             @endforeach
             @endif
+            @foreach($dataSystem->dataScaffold('v') as $value)
+            <th>{{$value}}</th>
+            @endforeach
             <th>actions</th>
         </thead>
         <tbody>
             @@foreach(${{$parser->plural()}} as ${{lcfirst($parser->singular())}})
             <tr>
-                @foreach($dataSystem->dataScaffold('v') as $value)
-                <td>@{!!${{lcfirst($parser->singular())}}->{{$value}}!!}</td>
-                @endforeach
                 @if($dataSystem->getRelationAttributes() != null)
                 @foreach($dataSystem->getRelationAttributes() as $key=>$value)
                 @foreach($value as $key1 => $value1)
+                @if($loop->first)
                 <td>@{!!${{$parser->singular()}}->{{str_singular($key)}}->{{$value1}}!!}</td>
+                @endif
                 @endforeach
                 @endforeach
                 @endif
+                @foreach($dataSystem->dataScaffold('v') as $value)
+                <td>@{!!${{lcfirst($parser->singular())}}->{{str_singular(str_slug($value,'_'))}}!!}</td>
+                @endforeach
                 <td>
                     <a data-toggle="modal" data-target="#myModal" class = 'delete btn btn-danger btn-xs' data-link = "/{{$parser->singular()}}/@{!!${{$parser->singular()}}->id!!}/deleteMsg" ><i class = 'fa fa-trash'> supprimer</i></a>
                     <a href = '#' class = 'viewEdit btn btn-primary btn-xs' data-link = '/{{$parser->singular()}}/@{!!${{$parser->singular()}}->id!!}/edit'><i class = 'fa fa-edit'> modifier</i></a>
