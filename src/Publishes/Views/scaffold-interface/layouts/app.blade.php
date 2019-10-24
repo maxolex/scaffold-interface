@@ -48,7 +48,7 @@
             <!-- logo for regular state and mobile devices -->
             <span class="logo-lg">
 						<img style="float: left" width="50px" src="{{ asset("images/logo.png") }}" alt="">
-                        <b>ScaffoldInterface</b>
+                        <b style="font-size: 15px;">ScaffoldInterface</b>
                     </span>
         </a>
         <!-- Header Navbar: style can be found in header.less -->
