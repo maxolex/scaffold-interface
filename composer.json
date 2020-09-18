@@ -23,12 +23,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Maxolex\\ScaffoldInterface\\": "src/"
+            "Maxolex\\ScaffoldInterface\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Maxolex\\ScaffoldInterface\\Tests\\": "tests/"
+            "Maxolex\\ScaffoldInterface\\Tests\\": "tests"
         }
     },
     "extra": {
