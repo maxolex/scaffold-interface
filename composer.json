@@ -13,7 +13,7 @@
         "php": ">=7.0",
         "amranidev/ajaxis": "3.0.*",
         "spatie/laravel-permission": "^5.5",
-        "pusher/pusher-http-laravel": "^4.0.0",
+        "pusher/pusher-http-laravel": "^4.2.4",
         "gajus/dindent": "2.0.*",
         "mercuryseries/flashy": "^1.0"
     },
