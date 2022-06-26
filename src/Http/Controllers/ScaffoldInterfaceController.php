@@ -1,6 +1,6 @@
 <?php
 
-namespace Maxolex\ScaffoldInterface\Controllers\Controllers;
+namespace Maxolex\ScaffoldInterface\Controllers;
 
 use AppController;
 
