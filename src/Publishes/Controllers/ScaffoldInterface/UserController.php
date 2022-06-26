@@ -42,7 +42,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $user = new \App\User();
+        $user = new \App\Models\User();
 
         $user->email = $request->email;
         $user->name = $request->name;
@@ -62,7 +62,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $user = \App\User::findOrfail($id);
+        $user = \App\Models\User::findOrfail($id);
         $roles = Role::all()->pluck('name');
         $permissions = Permission::all()->pluck('name');
         $userRoles = $user->roles;
@@ -80,7 +80,7 @@ class UserController extends Controller
      */
     public function update(Request $request)
     {
-        $user = \App\User::findOrfail($request->user_id);
+        $user = \App\Models\User::findOrfail($request->user_id);
 
         $user->email = $request->email;
         $user->name = $request->name;
@@ -100,7 +100,7 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        $user = \App\User::findOrfail($id);
+        $user = \App\Models\User::findOrfail($id);
 
         $user->delete();
 
@@ -116,7 +116,7 @@ class UserController extends Controller
      */
     public function addRole(Request $request)
     {
-        $user = \App\User::findOrfail($request->user_id);
+        $user = \App\Models\User::findOrfail($request->user_id);
         $user->assignRole($request->role_name);
 
         return redirect('scaffold-users/edit/'.$request->user_id);
@@ -133,7 +133,7 @@ class UserController extends Controller
     {
         if ($request->role_id == null)
         {
-            $user = \App\User::findorfail($request->user_id);
+            $user = \App\Models\User::findorfail($request->user_id);
             $user->givePermissionTo($request->permission_name);
 
             return redirect('scaffold-users/edit/'.$request->user_id);
@@ -158,7 +158,7 @@ class UserController extends Controller
     {
         if ($request->role_id == null)
         {
-            $user = \App\User::findorfail($user_id);
+            $user = \App\Models\User::findorfail($user_id);
 
             $user->revokePermissionTo(str_slug($permission, ' '));
 
@@ -181,7 +181,7 @@ class UserController extends Controller
      */
     public function revokeRole($role, $user_id)
     {
-        $user = \App\User::findorfail($user_id);
+        $user = \App\Models\User::findorfail($user_id);
 
         $user->removeRole(str_slug($role, ' '));
 
