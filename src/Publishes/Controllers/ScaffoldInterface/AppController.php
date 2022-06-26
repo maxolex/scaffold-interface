@@ -18,7 +18,7 @@ class AppController extends Controller
      */
     public function dashboard()
     {
-        $users = \App\User::all()->count();
+        $users = \App\Models\User::all()->count();
         $roles = \Spatie\Permission\Models\Role::all()->count();
         $permissions = \Spatie\Permission\Models\Permission::all()->count();
         $entities = \Maxolex\ScaffoldInterface\Models\Scaffoldinterface::all();
