@@ -76,7 +76,7 @@ Spatie\Permission\PermissionServiceProvider::class,
 
  `composer require laravel/ui`
  
- `php artisan ui vue --auth`
+ `php artisan ui bootstrap --auth`
 
 6. Add HasRole dependency to app/User.php:
 
