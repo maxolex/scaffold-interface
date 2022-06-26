@@ -77,7 +77,8 @@ Pusher\Laravel\PusherServiceProvider::class,
 
 5. Authentication scaffolding:
 
- `php artisan make:auth`
+ `composer require laravel/ui`
+ `php artisan ui vue --auth`
 
 6. Add HasRole dependency to app/User.php:
 
