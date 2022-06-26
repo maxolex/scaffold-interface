@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\ScaffoldInterface;
 
-use App\User;
+use App\Models\User;
 use Hash;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
