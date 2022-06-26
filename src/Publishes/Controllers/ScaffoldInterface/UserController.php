@@ -18,7 +18,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = \App\User::all();
+        $users = \App\Models\User::all();
 
         return view('scaffold-interface.users.index', compact('users'));
     }
