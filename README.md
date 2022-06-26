@@ -1,5 +1,3 @@
-[![SensioLabsInsight](https://insight.sensiolabs.com/projects/de72e940-3c06-4664-b84c-425838cd68ea/big.png)](https://insight.sensiolabs.com/projects/de72e940-3c06-4664-b84c-425838cd68ea)
-
 ![Imgur](http://i.imgur.com/9PkXGOV.jpg)
 
 ### Features
