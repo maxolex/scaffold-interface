@@ -1,30 +1,30 @@
     /**
-     * {{str_singular($model)}}.
+     * {{\Illuminate\Support\Str::singular($model)}}.
      *
      * @return \Illuminate\Support\Collection;
      */
-    public function {{str_plural($model)}}()
+    public function {{\Illuminate\Support\Str::plural($model)}}()
     {
-        return $this->belongsToMany('{{ config('maxolex.config.modelNameSpace') }}\{{ucfirst(str_singular($model))}}');
+        return $this->belongsToMany('{{ config('maxolex.config.modelNameSpace') }}\{{ucfirst(\Illuminate\Support\Str::singular($model))}}');
     }
 
     /**
-     * Assign a {{str_singular($model)}}.
+     * Assign a {{\Illuminate\Support\Str::singular($model)}}.
      *
-     * @param ${{str_singular($model)}}
+     * @param ${{\Illuminate\Support\Str::singular($model)}}
      * @return mixed
      */
-    public function assign{{ucfirst(str_singular($model))}}(${{str_singular($model)}})
+    public function assign{{ucfirst(\Illuminate\Support\Str::singular($model))}}(${{\Illuminate\Support\Str::singular($model)}})
     {
-        return $this->{{str_plural($model)}}()->attach(${{str_singular($model)}});
+        return $this->{{\Illuminate\Support\Str::plural($model)}}()->attach(${{\Illuminate\Support\Str::singular($model)}});
     }
     /**
-     * Remove a {{str_singular($model)}}.
+     * Remove a {{\Illuminate\Support\Str::singular($model)}}.
      *
-     * @param ${{str_singular($model)}}
+     * @param ${{\Illuminate\Support\Str::singular($model)}}
      * @return mixed
      */
-    public function remove{{ucfirst(str_singular($model))}}(${{str_singular($model)}})
+    public function remove{{ucfirst(\Illuminate\Support\Str::singular($model))}}(${{\Illuminate\Support\Str::singular($model)}})
     {
-        return $this->{{str_plural($model)}}()->detach(${{str_singular($model)}});
+        return $this->{{\Illuminate\Support\Str::plural($model)}}()->detach(${{\Illuminate\Support\Str::singular($model)}});
     }

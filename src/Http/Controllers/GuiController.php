@@ -143,7 +143,7 @@ class GuiController extends AppController
 
             return redirect('scaffold');
         }
-        $Msg = str_replace("\n", '', Artisan::output());
+        $Msg = \Illuminate\Support\Str::replace("\n", '', Artisan::output());
         Session::flash('status', $Msg);
 
         return redirect('scaffold');
@@ -169,7 +169,7 @@ class GuiController extends AppController
         } catch (\Exception $e) {
             return $e->getMessage();
         }
-        $Msg = str_replace("\n", '', Artisan::output());
+        $Msg = \Illuminate\Support\Str::replace("\n", '', Artisan::output());
         Session::flash('status', $Msg);
 
         return redirect('scaffold');

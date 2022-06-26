@@ -34,7 +34,7 @@ class DeleteCrudFiles
         unlink($event->scaffold->views.'/edit.blade.php');
         rmdir($event->scaffold->views);
         // clear Routes Resources.
-        $this->clearRoutes(lcfirst(str_singular($event->scaffold->tablename)));
+        $this->clearRoutes(lcfirst(\Illuminate\Support\Str::singular($event->scaffold->tablename)));
     }
 
     /**

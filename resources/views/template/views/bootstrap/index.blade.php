@@ -13,7 +13,7 @@
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
             @foreach($dataSystem->getRelationAttributes() as $key => $value)
-            <li><a href="{{URL::to('/')}}/{{lcfirst(str_singular($key))}}">{{ucfirst(str_singular($key))}}</a></li>
+            <li><a href="{{URL::to('/')}}/{{lcfirst(\Illuminate\Support\Str::singular($key))}}">{{ucfirst(\Illuminate\Support\Str::singular($key))}}</a></li>
             @endforeach
         </ul>
     </div> --}}
@@ -25,7 +25,7 @@
             @foreach($dataSystem->getRelationAttributes() as $key => $value)
             @foreach($value as $key1 => $value1)
             @if($loop->first)
-            <th>{{str_singular($key)}}</th>
+            <th>{{\Illuminate\Support\Str::singular($key)}}</th>
             @endif
             @endforeach
             @endforeach
@@ -42,13 +42,13 @@
                 @foreach($dataSystem->getRelationAttributes() as $key=>$value)
                 @foreach($value as $key1 => $value1)
                 @if($loop->first)
-                <td>@{!!${{$parser->singular()}}->{{str_singular($key)}}->{{$value1}}!!}</td>
+                <td>@{!!${{$parser->singular()}}->{{\Illuminate\Support\Str::singular($key)}}->{{$value1}}!!}</td>
                 @endif
                 @endforeach
                 @endforeach
                 @endif
                 @foreach($dataSystem->dataScaffold('v') as $value)
-                <td>@{!!${{lcfirst($parser->singular())}}->{{str_singular(str_slug($value,'_'))}}!!}</td>
+                <td>@{!!${{lcfirst($parser->singular())}}->{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}!!}</td>
                 @endforeach
                 <td>
                     <a data-toggle="modal" data-target="#myModal" class = 'delete btn btn-danger btn-xs' data-link = "/{{$parser->singular()}}/@{!!${{$parser->singular()}}->id!!}/deleteMsg" ><i class = 'fa fa-trash'> supprimer</i></a>

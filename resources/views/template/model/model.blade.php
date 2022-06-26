@@ -18,7 +18,7 @@ class {{ucfirst($parser->singular())}} extends Model
 	const RULES_UPDATE = [
 
 	];
-	
+
 	@if($dataSystem->isSoftdeletes())
 
 	use SoftDeletes;
@@ -35,9 +35,9 @@ class {{ucfirst($parser->singular())}} extends Model
 
 	@foreach($dataSystem->getForeignKeys() as $key)
 
-	public function {{lcfirst(str_singular($key))}}()
+	public function {{lcfirst(\Illuminate\Support\Str::singular($key))}}()
 	{
-		return $this->belongsTo('{{config('maxolex.config.modelNameSpace')}}\{{ucfirst(str_singular($key))}}','{{lcfirst(str_singular($key))}}_id');
+		return $this->belongsTo('{{config('maxolex.config.modelNameSpace')}}\{{ucfirst(\Illuminate\Support\Str::singular($key))}}','{{lcfirst(\Illuminate\Support\Str::singular($key))}}_id');
 	}
 
 	@endforeach

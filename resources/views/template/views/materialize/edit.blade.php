@@ -30,14 +30,14 @@
                 <div class="input-field col s6">
                     <input id="{{$value}}" name = "{{$value}}" type="text" class="validate" value="@{!!${{$parser->singular()}}->{{$value}}!!}">
                     <label for="{{$value}}">{{$value}}</label>
-                </div>   
+                </div>
             @endif
         <?php $i = $i + 1;?>
         @endforeach
         @foreach($dataSystem->getForeignKeys() as $key)
         <div class="input-field col s12">
-            <select name = '{{lcfirst(str_singular($key))}}_id'>
-                @@foreach(${{str_plural($key)}} as $key => $value)
+            <select name = '{{lcfirst(\Illuminate\Support\Str::singular($key))}}_id'>
+                @@foreach(${{\Illuminate\Support\Str::plural($key)}} as $key => $value)
                 <option value="@{{$key}}">@{{$value}}</option>
                 @@endforeach
             </select>

@@ -27,7 +27,7 @@
                 <td>
                     <b><i>{{$value1}} : </i><b>
                 </td>
-                <td>@{!!${{$parser->singular()}}->{{str_singular($key)}}->{{$value1}}!!}</td>
+                <td>@{!!${{$parser->singular()}}->{{\Illuminate\Support\Str::singular($key)}}->{{$value1}}!!}</td>
             </tr>
             @endforeach
             @endforeach

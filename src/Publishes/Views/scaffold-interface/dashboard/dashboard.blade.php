@@ -64,7 +64,7 @@
 				<div class="icon">
 					<i class="fa fa-book"></i>
 				</div>
-				<a href="{{url('/')}}/{{lcfirst(str_singular($entity->tablename))}}" class="small-box-footer">Plus d'infos <i class="fa fa-arrow-circle-right"></i></a>
+				<a href="{{url('/')}}/{{lcfirst(\Illuminate\Support\Str::singular($entity->tablename))}}" class="small-box-footer">Plus d'infos <i class="fa fa-arrow-circle-right"></i></a>
 			</div>
 		</div>
 		@endforeach

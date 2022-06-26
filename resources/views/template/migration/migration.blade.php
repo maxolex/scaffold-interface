@@ -7,7 +7,7 @@ use Illuminate\Database\Migrations\Migration;
  * @author The scaffold-interface created at {{date("Y-m-d h:i:sa")}}
  * @link https://github.com/maxolex/scaffold-interface
  */
-class {{studly_case(ucfirst($parser->plural()))}} extends Migration
+class {{\Illuminate\Support\Str::studly(ucfirst($parser->plural()))}} extends Migration
 {
     /**
      * Run the migrations.
@@ -24,11 +24,11 @@ class {{studly_case(ucfirst($parser->plural()))}} extends Migration
 
         @if($dataSystem->dataScaffold('migration')[$i] == "String(select)")
 
-        $table->String('{{str_singular(str_slug($attr,"_"))}}')->nullable();<?php $i = $i + 1;?>
+        $table->String('{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($attr,"_"))}}')->nullable();<?php $i = $i + 1;?>
 
         @else
 
-        $table->{{$dataSystem->dataScaffold('migration')[$i]}}('{{str_singular(str_slug($attr,"_"))}}')->nullable();<?php $i = $i + 1;?>
+        $table->{{$dataSystem->dataScaffold('migration')[$i]}}('{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($attr,"_"))}}')->nullable();<?php $i = $i + 1;?>
 
         @endif
 
@@ -39,8 +39,8 @@ class {{studly_case(ucfirst($parser->plural()))}} extends Migration
          */
         @foreach($dataSystem->getForeignKeys() as $key)
 
-        $table->integer('{{lcfirst(str_singular($key))}}_id')->unsigned()->nullable();
-        $table->foreign('{{lcfirst(str_singular($key))}}_id')->references('id')->on('{{$key}}')->onDelete('cascade');
+        $table->integer('{{lcfirst(\Illuminate\Support\Str::singular($key))}}_id')->unsigned()->nullable();
+        $table->foreign('{{lcfirst(\Illuminate\Support\Str::singular($key))}}_id')->references('id')->on('{{$key}}')->onDelete('cascade');
         @endforeach
 
         @if($dataSystem->isTimestamps())

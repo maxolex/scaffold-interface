@@ -35,7 +35,7 @@ class DatabaseManager
      */
     public static function make()
     {
-        $class = str_replace(
+        $class = \Illuminate\Support\Str::replace(
             'DatabaseManager',
             ucfirst(config('database.default')).'Database',
             self::class

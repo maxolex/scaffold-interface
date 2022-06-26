@@ -160,12 +160,12 @@ class UserController extends Controller
         {
             $user = \App\Models\User::findorfail($user_id);
 
-            $user->revokePermissionTo(str_slug($permission, ' '));
+            $user->revokePermissionTo(\Illuminate\Support\Str::slug($permission, ' '));
 
             return redirect('scaffold-users/edit/'.$user_id);
         }else{
             $role = Role::findById($request->role_id);
-            $role->revokePermissionTo(str_slug($permission,''));
+            $role->revokePermissionTo(\Illuminate\Support\Str::slug($permission,''));
             return redirect('scaffold-roles/edit/'.$role->id);
 
         }
@@ -183,7 +183,7 @@ class UserController extends Controller
     {
         $user = \App\Models\User::findorfail($user_id);
 
-        $user->removeRole(str_slug($role, ' '));
+        $user->removeRole(\Illuminate\Support\Str::slug($role, ' '));
 
         return redirect('scaffold-users/edit/'.$user_id);
     }

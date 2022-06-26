@@ -10,7 +10,7 @@
         @if($dataSystem->getRelationAttributes() != null)
         <ul id="dropdown" class="dropdown-content">
             @foreach($dataSystem->getRelationAttributes() as $key => $value)
-            <li><a href="{{URL::to('/')}}/{{lcfirst(str_singular($key))}}">{{ucfirst(str_singular($key))}}</a></li>
+            <li><a href="{{URL::to('/')}}/{{lcfirst(\Illuminate\Support\Str::singular($key))}}">{{ucfirst(\Illuminate\Support\Str::singular($key))}}</a></li>
             @endforeach
         </ul>
         <a class="col s3 btn dropdown-button #1e88e5 blue darken-1" href="#!" data-activates="dropdown">Associé<i class="mdi-navigation-arrow-drop-down right"></i></a>
@@ -39,7 +39,7 @@
                 @if($dataSystem->getRelationAttributes() != null)
                 @foreach($dataSystem->getRelationAttributes() as $key=>$value)
                 @foreach($value as $key1 => $value1)
-                <td>@{!!${{$parser->singular()}}->{{str_singular($key)}}->{{$value1}}!!}</td>
+                <td>@{!!${{$parser->singular()}}->{{\Illuminate\Support\Str::singular($key)}}->{{$value1}}!!}</td>
                 @endforeach
                 @endforeach
                 @endif

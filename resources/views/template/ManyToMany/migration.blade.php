@@ -10,12 +10,12 @@ class {{ucfirst($first)}}{{ucfirst($second)}} extends Migration
      */
     public function up()
     {
-        Schema::create('{{str_singular($first)}}_{{str_singular($second)}}',function (Blueprint $table){
+        Schema::create('{{\Illuminate\Support\Str::singular($first)}}_{{\Illuminate\Support\Str::singular($second)}}',function (Blueprint $table){
 			$table->increments('id')->unique()->index()->unsigned();
-			$table->integer('{{str_singular($first)}}_id')->unsigned()->index();
-			$table->foreign('{{str_singular($first)}}_id')->references('id')->on('{{$first}}')->onDelete('cascade');
-			$table->integer('{{str_singular($second)}}_id')->unsigned()->index();
-			$table->foreign('{{str_singular($second)}}_id')->references('id')->on('{{$second}}')->onDelete('cascade');
+			$table->integer('{{\Illuminate\Support\Str::singular($first)}}_id')->unsigned()->index();
+			$table->foreign('{{\Illuminate\Support\Str::singular($first)}}_id')->references('id')->on('{{$first}}')->onDelete('cascade');
+			$table->integer('{{\Illuminate\Support\Str::singular($second)}}_id')->unsigned()->index();
+			$table->foreign('{{\Illuminate\Support\Str::singular($second)}}_id')->references('id')->on('{{$second}}')->onDelete('cascade');
 			/**
 			 * Type your addition here
 			 *
@@ -30,6 +30,6 @@ class {{ucfirst($first)}}{{ucfirst($second)}} extends Migration
      */
     public function down()
     {
-        Schema::drop('{{str_singular($first)}}_{{str_singular($second)}}');
+        Schema::drop('{{\Illuminate\Support\Str::singular($first)}}_{{\Illuminate\Support\Str::singular($second)}}');
     }
 }

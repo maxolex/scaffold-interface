@@ -51,7 +51,7 @@
                                     <tr>
                                         <td>{{$permission->name}}</td>
                                         <td>
-                                            <a href="{{url('scaffold-users/removePermission')}}/{{str_slug($permission->name,'-')}}/{{$role->id}}"
+                                            <a href="{{url('scaffold-users/removePermission')}}/{{\Illuminate\Support\Str::slug($permission->name,'-')}}/{{$role->id}}"
                                                class="removal btn btn-danger btn-sm"><i class="fa fa-trash-o"
                                                 aria-hidden="true"></i></a></td>
                                     </tr>

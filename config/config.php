@@ -37,7 +37,7 @@
         |
         */
 
-        'model' => base_path('app'),
+        'model' => base_path('app/Models'),
 
         'views' => base_path('resources/views'),
 
@@ -82,7 +82,7 @@
 
         'controllerNameSpace' => 'App\\Http\\Controllers',
 
-        'modelNameSpace' => 'App',
+        'modelNameSpace' => 'App\\Models',
 
         /*
         |-------------------------------------------------------------------

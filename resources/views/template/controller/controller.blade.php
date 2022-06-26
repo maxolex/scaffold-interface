@@ -6,11 +6,11 @@ use App\Http\Controllers\Controller;
 use {{config('maxolex.config.modelNameSpace')}}\{{ucfirst($parser->singular())}};
 use Amranidev\Ajaxis\Ajaxis;
 use MercurySeries\Flashy\Flashy;
-use URL;
-use Validator;
+use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Facades\Validator;
 @foreach($dataSystem->getForeignKeys() as $key)
 
-use {{config('maxolex.config.modelNameSpace')}}\{{ucfirst(str_singular($key))}};
+use {{config('maxolex.config.modelNameSpace')}}\{{ucfirst(\Illuminate\Support\Str::singular($key))}};
 
 @endforeach
 
@@ -44,10 +44,10 @@ class {{ucfirst($parser->singular())}}Controller extends Controller
         $title = 'Ajout - {{$parser->singular()}}';
         @foreach($dataSystem->getForeignKeys() as $key => $value)
 
-        ${{str_plural($value)}} = {{ucfirst(str_singular($value))}}::all()->pluck('{{$dataSystem->getOnData()[$key]}}','id');
+        ${{\Illuminate\Support\Str::plural($value)}} = {{ucfirst(\Illuminate\Support\Str::singular($value))}}::all()->pluck('{{$dataSystem->getOnData()[$key]}}','id');
         @endforeach
 
-        return view('@if(config('maxolex.config.loadViews')){{config('maxolex.config.loadViews')}}::@endif @if(config('maxolex.config.prefixViews')){{config('maxolex.config.prefixViews')}}.@endif{{$parser->singular()}}.create'@if($dataSystem->getForeignKeys() != null),compact('title',@foreach($dataSystem->getForeignKeys() as $key => $value)'{{str_plural($value)}}' @if($value != last($dataSystem->getForeignKeys())),@endif @endforeach)@endif);
+        return view('@if(config('maxolex.config.loadViews')){{config('maxolex.config.loadViews')}}::@endif @if(config('maxolex.config.prefixViews')){{config('maxolex.config.prefixViews')}}.@endif{{$parser->singular()}}.create'@if($dataSystem->getForeignKeys() != null),compact('title',@foreach($dataSystem->getForeignKeys() as $key => $value)'{{\Illuminate\Support\Str::plural($value)}}' @if($value != last($dataSystem->getForeignKeys())),@endif @endforeach)@endif);
     }
 
     /**
@@ -73,13 +73,13 @@ class {{ucfirst($parser->singular())}}Controller extends Controller
 
         @foreach($dataSystem->dataScaffold('v') as $value)
 
-        ${{$parser->singular()}}->{{str_singular(str_slug($value,"_"))}} = $request->{{str_singular(str_slug($value,"_"))}};
+        ${{$parser->singular()}}->{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,"_"))}} = $request->{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,"_"))}};
 
         @endforeach
 
         @foreach($dataSystem->getForeignKeys() as $key)
 
-        ${{$parser->singular()}}->{{lcfirst(str_singular($key))}}_id = $request->{{lcfirst(str_singular($key))}}_id;
+        ${{$parser->singular()}}->{{lcfirst(\Illuminate\Support\Str::singular($key))}}_id = $request->{{lcfirst(\Illuminate\Support\Str::singular($key))}}_id;
 
         @endforeach
 
@@ -136,12 +136,12 @@ class {{ucfirst($parser->singular())}}Controller extends Controller
 
         @foreach($dataSystem->getForeignKeys() as $key => $value)
 
-        ${{str_plural($value)}} = {{ucfirst(str_singular($value))}}::all()->pluck('{{$dataSystem->getOnData()[$key]}}','id');
+        ${{\Illuminate\Support\Str::plural($value)}} = {{ucfirst(\Illuminate\Support\Str::singular($value))}}::all()->pluck('{{$dataSystem->getOnData()[$key]}}','id');
 
         @endforeach
 
         ${{$parser->singular()}} = {{ucfirst($parser->singular())}}::findOrfail($id);
-        return view('@if(config('maxolex.config.loadViews')){{config('maxolex.config.loadViews')}}::@endif<?php if( config('maxolex.config.prefixViews') ){ echo config('maxolex.config.prefixViews').'.';}?>{{$parser->singular()}}.edit',compact('title','{{$parser->singular()}}' @if($dataSystem->getForeignKeys() != null),@foreach($dataSystem->getForeignKeys() as $key => $value)'{{str_plural($value)}}'@if($value != last($dataSystem->getForeignKeys())),@endif @endforeach) @else )@endif);
+        return view('@if(config('maxolex.config.loadViews')){{config('maxolex.config.loadViews')}}::@endif<?php if( config('maxolex.config.prefixViews') ){ echo config('maxolex.config.prefixViews').'.';}?>{{$parser->singular()}}.edit',compact('title','{{$parser->singular()}}' @if($dataSystem->getForeignKeys() != null),@foreach($dataSystem->getForeignKeys() as $key => $value)'{{\Illuminate\Support\Str::plural($value)}}'@if($value != last($dataSystem->getForeignKeys())),@endif @endforeach) @else )@endif);
     }
 
     /**
@@ -167,12 +167,12 @@ class {{ucfirst($parser->singular())}}Controller extends Controller
         ${{$parser->singular()}} = {{ucfirst($parser->singular())}}::findOrfail($id);
     	@foreach($dataSystem->dataScaffold('v') as $value)
 
-        ${{$parser->singular()}}->{{str_singular(str_slug($value,"_"))}} = $request->{{str_singular(str_slug($value,"_"))}};
+        ${{$parser->singular()}}->{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,"_"))}} = $request->{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,"_"))}};
         @endforeach
 
         @foreach($dataSystem->getForeignKeys() as $key)
 
-        ${{$parser->singular()}}->{{lcfirst(str_singular($key))}}_id = $request->{{lcfirst(str_singular($key))}}_id;
+        ${{$parser->singular()}}->{{lcfirst(\Illuminate\Support\Str::singular($key))}}_id = $request->{{lcfirst(\Illuminate\Support\Str::singular($key))}}_id;
 
         @endforeach
 

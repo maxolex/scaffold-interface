@@ -65,8 +65,8 @@ class ManyToMany extends Filesystem
      */
     private function model()
     {
-        $this->relationship(config('maxolex.config.model').DIRECTORY_SEPARATOR.ucfirst(str_singular($this->tables['first'])).'.php', $this->tables['second']);
-        $this->relationship(config('maxolex.config.model').DIRECTORY_SEPARATOR.ucfirst(str_singular($this->tables['second'])).'.php', $this->tables['first']);
+        $this->relationship(config('maxolex.config.model').DIRECTORY_SEPARATOR.ucfirst(\Illuminate\Support\Str::singular($this->tables['first'])).'.php', $this->tables['second']);
+        $this->relationship(config('maxolex.config.model').DIRECTORY_SEPARATOR.ucfirst(\Illuminate\Support\Str::singular($this->tables['second'])).'.php', $this->tables['first']);
     }
 
     /**

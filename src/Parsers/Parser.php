@@ -1,5 +1,4 @@
 <?php
-
 namespace Maxolex\ScaffoldInterface\Parsers;
 
 /**
@@ -33,7 +32,7 @@ class Parser
      */
     public function singular()
     {
-        return str_singular(str_slug($this->data['TableName'], '_'));
+        return \Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($this->data['TableName'], '_'));
     }
 
     /**
@@ -43,7 +42,7 @@ class Parser
      */
     public function plural()
     {
-        return str_plural(str_slug($this->data['TableName'], '_'));
+        return \Illuminate\Support\Str::plural(\Illuminate\Support\Str::slug($this->data['TableName'], '_'));
     }
 
     /**
@@ -75,7 +74,7 @@ class Parser
      */
     public function getParse()
     {
-        if (starts_with($this->data['template'], 'boot')) {
+        if (\Illuminate\Support\Str::startsWith($this->data['template'], 'boot')) {
             return 'Bt';
         } else {
             return 'Mt';
@@ -86,11 +85,11 @@ class Parser
 
     public function real()
     {
-        return str_singular($this->data['TableName']);
+        return \Illuminate\Support\Str::singular($this->data['TableName']);
     }
 
     public function real_plural()
     {
-        return str_plural($this->data['TableName']);
+        return \Illuminate\Support\Str::plural($this->data['TableName']);
     }
 }

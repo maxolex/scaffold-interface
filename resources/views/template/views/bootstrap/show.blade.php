@@ -21,7 +21,7 @@
                 <td>
                     <b>{{$value}}</b>
                 </td>
-                <td>@{!!${{$parser->singular()}}->{{str_singular(str_slug($value,'_'))}}!!}</td>
+                <td>@{!!${{$parser->singular()}}->{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}!!}</td>
             </tr>
             @endforeach
             @if($dataSystem->getRelationAttributes() != null)
@@ -30,9 +30,9 @@
             @if($loop->first)
             <tr>
                 <td>
-                    <b>{{str_singular($key)}} : </b>
+                    <b>{{\Illuminate\Support\Str::singular($key)}} : </b>
                 </td>
-                <td>@{!!${{$parser->singular()}}->{{str_singular($key)}}->{{$value1}}!!}</td>
+                <td>@{!!${{$parser->singular()}}->{{\Illuminate\Support\Str::singular($key)}}->{{$value1}}!!}</td>
             </tr>
             @endif
             @endforeach

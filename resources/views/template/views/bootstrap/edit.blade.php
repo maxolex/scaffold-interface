@@ -14,8 +14,8 @@
                 @foreach($dataSystem->getForeignKeys() as $key)
                 <div class="col-md-6 form-group">
                     <label>{{$key}}</label>
-                    <select name = '{{lcfirst(str_singular($key))}}_id' class = "form-control">
-                        @@foreach(${{str_plural($key)}} as $key => $value)
+                    <select name = '{{lcfirst(\Illuminate\Support\Str::singular($key))}}_id' class = "form-control">
+                        @@foreach(${{\Illuminate\Support\Str::plural($key)}} as $key => $value)
                         <option value="@{{$key}}">@{{$value}}</option>
                         @@endforeach
                     </select>
@@ -25,33 +25,33 @@
                 @foreach($dataSystem->dataScaffold('v') as $value)
                     @if($dataSystem->dataScaffold('migration')[$i] == "date")
                         <div class="col-md-6 form-group">
-                            <label for="{{str_singular(str_slug($value,'_'))}}">{{$value}}</label>
-                            <input id="{{str_singular(str_slug($value,'_'))}}" name = "{{str_singular(str_slug($value,'_'))}}" type="date" class="form-control" value="@{!!${{$parser->singular()}}->{{str_singular(str_slug($value,'_'))}}!!}">
+                            <label for="{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}">{{$value}}</label>
+                            <input id="{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}" name = "{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}" type="date" class="form-control" value="@{!!${{$parser->singular()}}->{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}!!}">
                         </div>
                     @elseif($dataSystem->dataScaffold('migration')[$i] == "longText")
                     <div class="col-md-6 form-group">
-                        <label for="{{str_singular(str_slug($value,'_'))}}">{{$value}}</label>
-                        <textarea id="{{str_singular(str_slug($value,'_'))}}" name = "{{str_singular(str_slug($value,'_'))}}" class="form-control">@{!!${{$parser->singular()}}->{{str_singular(str_slug($value,'_'))}}!!}
+                        <label for="{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}">{{$value}}</label>
+                        <textarea id="{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}" name = "{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}" class="form-control">@{!!${{$parser->singular()}}->{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}!!}
                         </textarea>
                     </div>
                     @elseif($dataSystem->dataScaffold('migration')[$i] == "integer")
                     <div class="col-md-6 form-group">
-                        <label for="{{str_singular(str_slug($value,'_'))}}">{{$value}}</label>
-                        <input id="{{str_singular(str_slug($value,'_'))}}" name = "{{str_singular(str_slug($value,'_'))}}" type="number" step="1" class="form-control" value="@{!!${{$parser->singular()}}->{{str_singular(str_slug($value,'_'))}}!!}">
+                        <label for="{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}">{{$value}}</label>
+                        <input id="{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}" name = "{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}" type="number" step="1" class="form-control" value="@{!!${{$parser->singular()}}->{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}!!}">
                     </div>
                     @elseif($dataSystem->dataScaffold('migration')[$i] == "String(select)")
                     <div class="col-md-6 form-group">
-                        <label for="{{str_singular(str_slug($value,'_'))}}">{{$value}}</label>
-                        <select name = "{{str_singular(str_slug($value,'_'))}}" class = 'form-control'>
+                        <label for="{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}">{{$value}}</label>
+                        <select name = "{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}" class = 'form-control'>
                             <option value=""></option>
-                            <option @{!!${{$parser->singular()}}->{{str_singular(str_slug($value,'_'))}} == "ma_valeur" ? "selected":"" !!} value="ma_valeur">Ma Valeur</option>
+                            <option @{!!${{$parser->singular()}}->{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}} == "ma_valeur" ? "selected":"" !!} value="ma_valeur">Ma Valeur</option>
                         </select>
                     </div>
                     @else
                         <div class="col-md-6 form-group">
-                            <label for="{{str_singular(str_slug($value,'_'))}}">{{$value}}</label>
-                            <input id="{{str_singular(str_slug($value,'_'))}}" name = "{{str_singular(str_slug($value,'_'))}}" type="text" class="form-control" value="@{!!${{$parser->singular()}}->{{str_singular(str_slug($value,'_'))}}!!}">
-                        </div>   
+                            <label for="{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}">{{$value}}</label>
+                            <input id="{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}" name = "{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}" type="text" class="form-control" value="@{!!${{$parser->singular()}}->{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}!!}">
+                        </div>
                     @endif
                 <?php $i = $i + 1;?>
                 @endforeach
@@ -61,6 +61,6 @@
             </form>
         </div>
     </div>
-    
+
 </section>
 @@endsection
