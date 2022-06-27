@@ -25,4 +25,15 @@ class AppController extends Controller
 
         return view('scaffold-interface.dashboard.dashboard', compact('users', 'roles', 'permissions', 'entities'));
     }
+
+
+    public function semantic-dashboard()
+    {
+        $users = \App\Models\User::all()->count();
+        $roles = \Spatie\Permission\Models\Role::all()->count();
+        $permissions = \Spatie\Permission\Models\Permission::all()->count();
+        $entities = \Maxolex\ScaffoldInterface\Models\Scaffoldinterface::all();
+
+        return view('scaffold-interface.dashboard.semantic-dashboard', compact('users', 'roles', 'permissions', 'entities'));
+    }
 }
