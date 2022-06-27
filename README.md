@@ -37,7 +37,6 @@
 Maxolex\ScaffoldInterface\ScaffoldInterfaceServiceProvider::class,
 Amranidev\Ajaxis\AjaxisServiceProvider::class,
 Spatie\Permission\PermissionServiceProvider::class,
-Pusher\Laravel\PusherServiceProvider::class,
  ```
 
 3. Publish the assets in your application with:
@@ -76,7 +75,8 @@ Pusher\Laravel\PusherServiceProvider::class,
 5. Authentication scaffolding:
 
  `composer require laravel/ui`
- `php artisan ui vue --auth`
+ 
+ `php artisan ui bootstrap --auth`
 
 6. Add HasRole dependency to app/User.php:
 

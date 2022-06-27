@@ -87,15 +87,13 @@ class {{ucfirst($parser->singular())}}Controller extends Controller
 
         Flashy::success('Un element a été ajouté avec succès', route('@if(config('maxolex.config.prefixRoutes')){{config('maxolex.config.prefixRoutes')}}/@endif{{$parser->singular()}}.index'));
 
-        $pusher = App::make('pusher');
+        //$pusher = App::make('pusher');
 
         //default pusher notification.
         //by default channel=test-channel,event=test-event
         //Here is a pusher notification example when you create a new resource in storage.
         //you can modify anything you want or use it wherever.
-        $pusher->trigger('test-channel',
-                         'test-event',
-                        ['message' => '{{$parser->singular()}} a été ajouté !!']);
+        //$pusher->trigger('test-channel','test-event',['message' => '{{$parser->singular()}} a été ajouté !!']);
 
         return redirect('@if(config('maxolex.config.prefixRoutes')){{config('maxolex.config.prefixRoutes')}}/@endif{{$parser->singular()}}');
     }
