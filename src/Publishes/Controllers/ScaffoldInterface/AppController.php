@@ -27,7 +27,7 @@ class AppController extends Controller
     }
 
 
-    public function semantic-dashboard()
+    public function semantic_dashboard()
     {
         $users = \App\Models\User::all()->count();
         $roles = \Spatie\Permission\Models\Role::all()->count();
