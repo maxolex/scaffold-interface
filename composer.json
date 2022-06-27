@@ -1,0 +1,43 @@
+{
+    "name": "maxolex/scaffold-interface",
+    "description": "A Smart CRUD Generator For Laravel (FRENCH)",
+    "type": "laravel-package",
+    "homepage": "http://github.com/maxolex/scaffold-interface",
+    "keywords": ["laravel", "framework", "files", "scaffod", "CRUD", "crud generator", "crud generators", "scaffoldinterface", "Scaffolding", "Scaffold", "laravel bootstrap", "laravel materialize", "Laravel 5.1", "Laravel 5.2", "maxolex", "Maxolex Togolais", "maxolextogolais", "smart crud generator", "smart generator"],
+    "license": "MIT",
+    "authors": [{
+        "name": "Maxolex Togolais",
+        "email": "maxolex12@gmail.com"
+    }],
+    "require": {
+        "php": ">=7.0",
+        "amranidev/ajaxis": "3.0.*",
+        "spatie/laravel-permission": "^5.5",
+        "gajus/dindent": "2.0.*",
+        "mercuryseries/flashy": "^1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.0|~5.0|~6.0",
+        "orchestra/testbench": "~3.5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Maxolex\\ScaffoldInterface\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Maxolex\\ScaffoldInterface\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.8.x-dev"
+        },
+        "laravel": {
+            "providers": [
+                "Maxolex\\ScaffoldInterface\\ScaffoldInterfaceServiceProvider"
+            ]
+        }
+    }
+}
