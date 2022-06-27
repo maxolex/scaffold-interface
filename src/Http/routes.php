@@ -37,7 +37,7 @@ Route::group(['middleware' => 'web'], function () {
 Route::group(['middleware' => ['web', 'auth']], function () {
     // you can change anything you want.
     //Dashboard
-    Route::get('scaffold-dashboard', '\App\Http\Controllers\ScaffoldInterface\AppController@semantic-dashboard');
+    Route::get('scaffold-dashboard', '\App\Http\Controllers\ScaffoldInterface\AppController@semantic_dashboard');
 
     //Users
     Route::get('scaffold-users', '\App\Http\Controllers\ScaffoldInterface\UserController@index');
