@@ -47,5 +47,5 @@
 @endsection
 
 @section('container')
-    @include('partials._nav')
+    @include('scaffold-interface.layouts.semantic-ui.partials._nav')
 @endsection
