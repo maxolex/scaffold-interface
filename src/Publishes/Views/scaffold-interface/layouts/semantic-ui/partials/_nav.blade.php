@@ -12,16 +12,19 @@
 <div class="ui grid" style="margin-top: 20px;">
     <div class="sixteen wide mobile three wide computer column" style="padding-left: 40px">
         <div class="ui vertical pointing inverted grey menu">
-            <a class="item {{ (Route::is("admin.dashboard") ? "green active" : "") }}"
-               href={{ @route("admin.dashboard") }}>Tableau de bord</a>
+            <a class="item {{ (Route::is('/scaffold-dashboard') ? 'green active' : '') }}"
+               href="/scaffold-dashboard">Tableau de bord</a>
+
+           <a class="item {{ (Route::is('/scaffold') ? 'green active' : '') }}"
+           href="{{url('/scaffold')}}">Scaffold Interface</a>
 
 
 
-            <a href="{{ route('admin.logout') }}"
+            <a href="{{ url('/logout') }}"
                onclick="event.preventDefault();
         document.getElementById('logout-form').submit();"
                class="item">Deconnexion</a>
-            <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" style="display: none;">
+            <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                 {{ csrf_field() }}
             </form>
         </div>

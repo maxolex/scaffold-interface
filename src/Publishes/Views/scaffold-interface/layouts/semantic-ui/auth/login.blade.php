@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('scaffold-interface.layouts.semantic-ui.layouts.app')
 
 @section('title','ADMIN GEORISQUES')
 

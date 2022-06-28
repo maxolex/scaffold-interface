@@ -1,4 +1,4 @@
-@extends('layouts.admin-app')
+@extends('scaffold-interface.layouts.semantic-ui.layouts.admin-app')
 
 @section('stylesheet')
     <style>

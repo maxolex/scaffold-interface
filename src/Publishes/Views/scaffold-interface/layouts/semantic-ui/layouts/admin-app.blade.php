@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield("title") </title>
 
-    <link rel="stylesheet" type="text/css" href='{{ asset("semantic-ui/css/semantic.min.css") }}'>
-    <link rel="stylesheet" type="text/css" href='{{ asset("semantic-ui/css/datatables.semanticui.min.css") }}'>
-    <link rel="stylesheet" type="text/css" href='{{ asset("semantic-ui/css/calendar.min.css") }}'>
-    <link rel="stylesheet" type="text/css" href='{{ asset("semantic-ui/build/jquery.datetimepicker.min.css") }}'>
-    <link rel="stylesheet" type="text/css" href='{{ asset("semantic-ui/libraries/sweetalert/sweetalert.css") }}'>
+    <link rel="stylesheet" type="text/css" href='{{ asset("assets/semantic-ui/css/semantic.min.css") }}'>
+    <link rel="stylesheet" type="text/css" href='{{ asset("assets/semantic-ui/css/datatables.semanticui.min.css") }}'>
+    <link rel="stylesheet" type="text/css" href='{{ asset("assets/semantic-ui/css/calendar.min.css") }}'>
+    <link rel="stylesheet" type="text/css" href='{{ asset("assets/semantic-ui/build/jquery.datetimepicker.min.css") }}'>
+    <link rel="stylesheet" type="text/css" href='{{ asset("assets/semantic-ui/libraries/sweetalert/sweetalert.css") }}'>
 
     @yield('stylesheet')
 </head>
@@ -19,15 +19,15 @@
 
 @yield('container')
 
-<script src='{{ asset("semantic-ui/js/jquery.min.js") }}'></script>
-<script src='{{ asset("semantic-ui/js/jquery-ui.min.js") }}'></script>
-<script src='{{ asset("semantic-ui/js/semantic.min.js") }}'></script>
-<script src='{{ asset("semantic-ui/js/datatables.min.js") }}'></script>
-<script src='{{ asset("semantic-ui/js/jquery.datatables.min.js") }}'></script>
-<script src='{{ asset("semantic-ui/js/datatables.semanticui.min.js") }}'></script>
-<script src='{{ asset("semantic-ui/js/calendar.min.js") }}'></script>
-<script src='{{ asset("semantic-ui/build/jquery.datetimepicker.full.min.js") }}'></script>
-<script src='{{ asset("semantic-ui/libraries/sweetalert/sweetalert.min.js") }}'></script>
+<script src='{{ asset("assets/semantic-ui/js/jquery.min.js") }}'></script>
+<script src='{{ asset("assets/semantic-ui/js/jquery-ui.min.js") }}'></script>
+<script src='{{ asset("assets/semantic-ui/js/semantic.min.js") }}'></script>
+<script src='{{ asset("assets/semantic-ui/js/datatables.min.js") }}'></script>
+<script src='{{ asset("assets/semantic-ui/js/jquery.datatables.min.js") }}'></script>
+<script src='{{ asset("assets/semantic-ui/js/datatables.semanticui.min.js") }}'></script>
+<script src='{{ asset("assets/semantic-ui/js/calendar.min.js") }}'></script>
+<script src='{{ asset("assets/semantic-ui/build/jquery.datetimepicker.full.min.js") }}'></script>
+<script src='{{ asset("assets/semantic-ui/libraries/sweetalert/sweetalert.min.js") }}'></script>
 <script>
     $('.message .close')
         .on('click', function () {
