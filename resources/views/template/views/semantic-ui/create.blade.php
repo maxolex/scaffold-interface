@@ -48,7 +48,6 @@
 		                        <div class="ui error">
 		                            @@if($errors->has('{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}') || session()->has("{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}."_error"))
 										<p>{{ $errors->first(\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))') }}</p>
-		                                <p>{{ session(\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))."_error") }}</p>
 		                            @@endif
 		                        </div>
 		                    </div>
@@ -61,7 +60,6 @@
 		                        <div class="ui error">
 		                            @@if($errors->has('{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}') || session()->has("{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}."_error"))
 										<p>{{ $errors->first(\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))') }}</p>
-		                                <p>{{ session(\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))."_error") }}</p>
 		                            @@endif
 		                        </div>
 		                    </div>
@@ -82,7 +80,6 @@
 		                        <div class="ui error">
 		                            @@if($errors->has('{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}') || session()->has("{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}."_error"))
 										<p>{{ $errors->first(\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))') }}</p>
-		                                <p>{{ session(\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))."_error") }}</p>
 		                            @@endif
 		                        </div>
 		                    </div>
