@@ -7,7 +7,7 @@
     <div class="ui grid">
         <form class="ui eight wide column centered form" action='@{!!url("{{$parser->singular()}}")!!}' method="post">
 
-            {{  csrf_field() }}
+            @{{  csrf_field() }}
 
             <div class="ui stacked segment">
 
@@ -81,6 +81,12 @@
     <script>
         $('select.dropdown')
             .dropdown()
+        ;
+
+		$(document)
+            .ready(function () {
+                $('.ui.form').form({});
+            })
         ;
     </script>
 @@endsection
