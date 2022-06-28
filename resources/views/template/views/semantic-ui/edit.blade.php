@@ -19,9 +19,9 @@
                 <div class="field">
                     <label>{{$key}}</label>
                     <select name="{{lcfirst(\Illuminate\Support\Str::singular($key))}}_id" class="ui fluid search dropdown">
-                        @foreach($@{!!\Illuminate\Support\Str::plural($key)!!} as $key => $value)
+                        @@foreach(${{\Illuminate\Support\Str::plural($key)}} as $key => $value)
                             <option value="@{{$key}}">@{{$value}}</option>
-                        @endforeach
+                        @@endforeach
                     </select>
                 </div>
                 @endforeach
