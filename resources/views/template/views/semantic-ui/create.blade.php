@@ -77,10 +77,10 @@
 
 @@endsection
 
-@section('scripts')
+@@section('scripts')
     <script>
         $('select.dropdown')
             .dropdown()
         ;
     </script>
-@endsection
+@@endsection

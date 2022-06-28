@@ -4,7 +4,7 @@
 <h1>{{ucfirst($parser->real_plural())}}</h1>
     <div class="header">La liste des {{ucfirst($parser->real_plural())}}</div>
     <br>
-    <a style="margin-bottom: 10px;" class="ui primary button" href="@{!!url("{{$parser->singular()}}")!!}/create'" }}>
+    <a style="margin-bottom: 10px;" class="ui primary button" href="@{!!url("{{$parser->singular()}}")!!}/create" }}>
         <i class="icon add"></i>
         Ajouter
     </a>
