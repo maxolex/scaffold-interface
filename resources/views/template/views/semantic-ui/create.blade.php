@@ -35,8 +35,8 @@
 		                        <input type="date" name="{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}" placeholder="{{$value}}">
 		                        <div class="ui error">
 		                            @@if($errors->has('{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}') || session()->has("{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}."_error"))
-		                                <p>{{ $errors->first('{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}') }}</p>
-		                                <p>{{ session("{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}."_error") }}</p>
+		                                <p>{{ $errors->first('@{!!\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}') !!}</p>
+		                                <p>{{ session("@{!!\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}."_error") !!}</p>
 		                            @@endif
 		                        </div>
 		                    </div>
@@ -48,8 +48,8 @@
 		                        <textarea name="{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}" placeholder="{{$value}}"></textarea>
 		                        <div class="ui error">
 		                            @@if($errors->has('{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}') || session()->has("{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}."_error"))
-		                                <p>{{ $errors->first('{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}') }}</p>
-		                                <p>{{ session("{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}."_error") }}</p>
+		                                <p>{{ $errors->first('@{!!\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}') !!}</p>
+		                                <p>{{ session("@{!!\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}."_error") !!}</p>
 		                            @@endif
 		                        </div>
 		                    </div>
@@ -61,8 +61,8 @@
 		                        <input type="number" name="{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}" placeholder="{{$value}}">
 		                        <div class="ui error">
 		                            @@if($errors->has('{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}') || session()->has("{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}."_error"))
-		                                <p>{{ $errors->first('{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}') }}</p>
-		                                <p>{{ session("{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}."_error") }}</p>
+		                                <p>{{ $errors->first('@{!!\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}') !!}</p>
+		                                <p>{{ session("@{!!\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}."_error") !!}</p>
 		                            @@endif
 		                        </div>
 		                    </div>
@@ -81,10 +81,10 @@
 		                        <!--i class="folder open icon"></i-->
 		                        <input type="text" name="{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}" placeholder="{{$value}}">
 		                        <div class="ui error">
-		                            @if($errors->has('{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}') || session()->has("{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}."_error"))
-		                                <p>{{ $errors->first('{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}') }}</p>
-		                                <p>{{ session("{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}."_error") }}</p>
-		                            @endif
+		                            @@if($errors->has('{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}') || session()->has("{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}."_error"))
+		                                <p>{{ $errors->first('@{!!\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}') !!}</p>
+		                                <p>{{ session("@{!!\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}."_error") !!}</p>
+		                            @@endif
 		                        </div>
 		                    </div>
 		                </div>
