@@ -89,7 +89,7 @@
                 $.ajax(
                     {
                         type: "POST",
-                        url: '/{{$parser->singular()}}/' + id + '/deleteMsg',
+                        url: '/{{$parser->singular()}}/' + id,
                         data: {'_method': 'delete', '_token': '{{ csrf_token() }}'}
                     }
                 )
