@@ -48,7 +48,7 @@
 
                     <!-- delete the item (uses the destroy method DESTROY /item/{id} -->
                     <a class="ui red button pull-right" data-token="{{ csrf_token() }}" href="#"
-                       onclick="DeleteElement('{{$value->label}}', '{{$value->id}}'); event.preventDefault();">
+                       onclick="DeleteElement('{{${{lcfirst($parser->singular())}}->nom}}', '{{${{lcfirst($parser->singular())}}->id}}'); event.preventDefault();">
                         <i class="trash icon"></i>Supprimé</a>
 
                     <!-- show the item (uses the show method found at GET /item/{id} -->
