@@ -64,7 +64,7 @@
             @@endforeach
         </tbody>
     </table>
-@endsection
+@@endsection
 
 @@section('scripts')
     <script>
@@ -103,4 +103,4 @@
             });
         }
     </script>
-@endsection
+@@endsection
