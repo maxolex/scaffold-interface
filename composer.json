@@ -3,7 +3,7 @@
     "description": "A Smart CRUD Generator For Laravel (FRENCH)",
     "type": "laravel-package",
     "homepage": "http://github.com/maxolex/scaffold-interface",
-    "keywords": ["laravel", "framework", "files", "scaffod", "CRUD", "crud generator", "crud generators", "scaffoldinterface", "Scaffolding", "Scaffold", "laravel bootstrap", "laravel materialize", "Laravel 5.1", "Laravel 5.2", "maxolex", "Maxolex Togolais", "maxolextogolais", "smart crud generator", "smart generator"],
+    "keywords": ["laravel", "framework", "files", "scaffold", "CRUD", "crud generator", "crud generators", "scaffoldinterface", "Scaffolding", "Scaffold", "laravel bootstrap", "laravel materialize", "Laravel 5.1", "Laravel 5.2", "maxolex", "Maxolex Togolais", "maxolextogolais", "smart crud generator", "smart generator"],
     "license": "MIT",
     "authors": [{
         "name": "Maxolex Togolais",
