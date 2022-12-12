@@ -22,12 +22,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Maxolex\\ScaffoldInterface\\": "src"
+            "maxolex\\scaffold-interface\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Maxolex\\ScaffoldInterface\\Tests\\": "tests"
+            "maxolex\\scaffold-interface\\Tests\\": "tests"
         }
     },
     "extra": {
@@ -36,7 +36,7 @@
         },
         "laravel": {
             "providers": [
-                "Maxolex\\ScaffoldInterface\\ScaffoldInterfaceServiceProvider"
+                "maxolex\\scaffold-interface\\ScaffoldInterfaceServiceProvider"
             ]
         }
     }
