@@ -41,7 +41,7 @@ Spatie\Permission\PermissionServiceProvider::class,
 
 3. Publish the assets in your application with:
 
- `php artisan vendor:publish --provider="Maxolex\ScaffoldInterface\ScaffoldInterfaceServiceProvider --force"`
+ `php artisan vendor:publish --provider="Maxolex\ScaffoldInterface\ScaffoldInterfaceServiceProvider"  --force`
  
  `php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider" --tag="migrations"`
  
