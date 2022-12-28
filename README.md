@@ -30,6 +30,7 @@
 1. Run the following command:
 
  `composer require maxolex/scaffold-interface`
+ `composer require laravel/ui "^3.0"` (LARAVEL 8)
 
 2. Add the service providers to config/app.php:
 
@@ -73,8 +74,6 @@ Spatie\Permission\PermissionServiceProvider::class,
  `php artisan migrate`
 
 5. Authentication scaffolding:
-
- `composer require laravel/ui`
  
  `php artisan ui bootstrap --auth`
 
