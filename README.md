@@ -30,7 +30,12 @@
 1. Run the following command:
 
  `composer require maxolex/scaffold-interface`
+
  `composer require laravel/ui "^3.0"` (LARAVEL 8)
+
+ `npm install`
+
+ `npm run dev`
 
 2. Add the service providers to config/app.php:
 

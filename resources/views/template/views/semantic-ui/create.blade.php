@@ -30,22 +30,24 @@
                 @foreach($dataSystem->dataScaffold('v') as $value)
                     @if($dataSystem->dataScaffold('migration')[$i] == "date")
 		                <div class="field">
+		                	<label for="{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}">{{$value}}</label>
 		                    <div class="ui left icon input">
-		                        <!--i class="folder open icon"></i-->
+		                        <i class="calendar icon"></i>
 		                        <input type="date" name="{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}" placeholder="{{$value}}">
 		                    </div>
 		                </div>
 	                @elseif($dataSystem->dataScaffold('migration')[$i] == "longText")
 	                	<div class="field">
+	                		<label for="{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}">{{$value}}</label>
 		                    <div class="ui left icon input">
-		                        <!--i class="folder open icon"></i-->
 		                        <textarea name="{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}" placeholder="{{$value}}"></textarea>
 		                    </div>
 		                </div>
 	                @elseif($dataSystem->dataScaffold('migration')[$i] == "integer")
 	                	<div class="field">
+	                		<label for="{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}">{{$value}}</label>
 		                    <div class="ui left icon input">
-		                        <!--i class="folder open icon"></i-->
+		                        <i class="sort numeric up icon"></i>
 		                        <input type="number" name="{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}" placeholder="{{$value}}">
 		                    </div>
 		                </div>
@@ -57,10 +59,27 @@
                             	<option value="ma_valeur">Ma valeur</option>
 		                    </select>
 		                </div>
+	                @elseif($dataSystem->dataScaffold('migration')[$i] == "datetime-local")
+		                <div class="field">
+		                	<label for="{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}">{{$value}}</label>
+		                    <div class="ui left icon input">
+		                        <i class="calendar alternate icon"></i>
+		                        <input type="datetime-local" name="{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}" placeholder="{{$value}}">
+		                    </div>
+		                </div>
+	                @elseif($dataSystem->dataScaffold('migration')[$i] == "email")
+		                <div class="field">
+		                	<label for="{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}">{{$value}}</label>
+		                    <div class="ui left icon input">
+		                        <i class="envelope icon"></i>
+		                        <input type="email" name="{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}" placeholder="{{$value}}">
+		                    </div>
+		                </div>
 	                @else
 	                	<div class="field">
+	                		<label for="{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}">{{$value}}</label>
 		                    <div class="ui left icon input">
-		                        <!--i class="folder open icon"></i-->
+		                        <i class="chevron circle right icon"></i>
 		                        <input type="text" name="{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}" placeholder="{{$value}}">
 		                    </div>
 		                </div>

@@ -25,6 +25,10 @@ class {{\Illuminate\Support\Str::studly(ucfirst($parser->plural()))}} extends Mi
         @if($dataSystem->dataScaffold('migration')[$i] == "String(select)")
 
         $table->String('{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($attr,"_"))}}')->nullable();<?php $i = $i + 1;?>
+        
+        @elseif($dataSystem->dataScaffold('migration')[$i] == "datetime-local")
+
+        $table->String('{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($attr,"_"))}}')->nullable();<?php $i = $i + 1;?>
 
         @else
 

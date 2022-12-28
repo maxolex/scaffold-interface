@@ -29,7 +29,7 @@ var vm = new Vue({
         //error message
         errorMsg: '',
         // Type select
-        select: ['String','String(select)', 'date', 'longText', 'integer', 'biginteger', 'boolean', 'float'],
+        select: ['String','String(select)', 'date', 'longText','email', 'integer', 'biginteger', 'boolean', 'float','datetime-local'],
         selected: '0',
         // rows counts
         rows: 0,

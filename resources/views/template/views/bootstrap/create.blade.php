@@ -46,6 +46,16 @@
                             <option value="ma_valeur">Ma valeur</option>
                         </select>
                     </div>
+                    @elseif($dataSystem->dataScaffold('migration')[$i] == "datetime-local")
+                    <div class="col-md-6 form-group">
+                        <label for="{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}">{{$value}}</label>
+                        <input id="{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}" name = "{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}" type="datetime-local" class="form-control">
+                    </div>
+                    @elseif($dataSystem->dataScaffold('migration')[$i] == "email")
+                    <div class="col-md-6 form-group">
+                        <label for="{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}">{{$value}}</label>
+                        <input id="{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}" name = "{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}" type="email" class="form-control">
+                    </div>
                     @else
                     <div class="col-md-6 form-group">
                         <label for="{{\Illuminate\Support\Str::singular(\Illuminate\Support\Str::slug($value,'_'))}}">{{$value}}</label>

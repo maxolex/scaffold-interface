@@ -13,6 +13,7 @@
         <div id = "el1" class = 'container'>
             <h3 class = "thin">A Smart CRUD Generator For <i>Laravel</i> (FRENCH)</h3>
             <div style = 'margin-top: 2cm;'></div>
+            <a href="/home"><button class = 'btn blue animated'><i class = 'material-icons left'>dashboard</i>Tableau de bord</button></a>
             <button v-if = '!show' transition = "fade" class = 'btn animated' @click = 'show = ! show'><i class = 'material-icons left'>add</i>Nouvelle Table</button>
             <a href = '#modal1' transition = "fade" class = 'create btn red modal-trigger' data-link = "/scaffold/manyToManyForm"><i class = 'material-icons left'>device_hub</i>Many To Many</a>
             <a href="{{url('/scaffold/graph')}}" class="btn orange"><i class="material-icons left">share</i>Graph</a>
@@ -176,7 +177,7 @@
                 <i class="large mdi-navigation-menu"></i>
             </a>
             <ul>
-                <li><a href = "{{url('/scaffold-dashboard')}}" class="btn-floating blue tooltipped" data-position="left" data-delay="50" data-tooltip="Tableau de bord"><i class="material-icons">view_list</i></a></li>
+                <li><a href = "{{url('/home')}}" class="btn-floating blue tooltipped" data-position="left" data-delay="50" data-tooltip="Tableau de bord"><i class="material-icons">view_list</i></a></li>
                 <li><a href = "{{url('/scaffold/rollback')}}" class="btn-floating pink tooltipped" data-position="left" data-delay="50" data-tooltip="RollBack the Schema"><i class="material-icons">repeat</i></a></li>
                 <li><a href = "{{url('/scaffold/migrate')}}" class="btn-floating orange tooltipped" data-position="left" data-delay="50" data-tooltip="Migrate the Schema"><i class="material-icons">input</i></a></li>
             </ul>
