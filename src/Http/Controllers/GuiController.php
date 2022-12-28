@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\File;
 use Maxolex\ScaffoldInterface\Attribute;
 use Maxolex\ScaffoldInterface\Models\Relation;
 use Maxolex\ScaffoldInterface\Models\Scaffoldinterface;
@@ -85,6 +86,22 @@ class GuiController extends AppController
     public function destroy($id)
     {
         $scaffoldInterface = Scaffoldinterface::FindOrFail($id);
+        
+        //Delete migration
+        $migration_path = $scaffoldInterface->migration;
+        if(File::exists($migration_path)) File::delete($migration_path);
+
+        //Delete model
+        $model_path = $scaffoldInterface->model;
+        if(File::exists($model_path)) File::delete($model_path);
+
+        //Delete controller
+        $controller_path = $scaffoldInterface->controller;
+        if(File::exists($controller_path)) File::delete($controller_path);
+
+        //Delete views
+        $views_path = $scaffoldInterface->views;
+        if(File::exists($views_path)) File::deleteDirectory($views_path);
 
         $scaffoldInterface->delete();
 
