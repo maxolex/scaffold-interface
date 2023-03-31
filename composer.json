@@ -30,6 +30,7 @@
             "Maxolex\\ScaffoldInterface\\Tests\\": "tests/"
         }
     },
+    "prefer-stable": false,
     "extra": {
         "branch-alias": {
             "dev-master": "1.8.x-dev"
